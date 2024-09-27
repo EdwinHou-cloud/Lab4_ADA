@@ -220,28 +220,34 @@ def menu():
             if opcion == "1":
                 presentacion()
             elif opcion == "2":
-                print("\nSeleccione una opción para la lista: ")
-                print("A. Agregar 20 números a la lista")
-                print("B. Mostrar la lista")
-                print("C. Ordenar y mostrar la lista")
-                print("D. Mostrar la longitud de la lista")
-                print("E. Buscar un número en la lista")
-                opcionQ = input("Seleccione una opción (A a E): ")
-                if opcionQ == 'A'or opcionQ == 'a':
-                    lista = Agregar_Elmnts()
-                    
-                elif opcionQ == 'B' or opcionQ == 'b':
-                    if lista:  #Verifica si la lista esta vacia
-                        Mostrar_Lista(lista)
+                while True:
+                    print("\nSeleccione una opción para la lista: ")
+                    print("A. Agregar 20 números a la lista")
+                    print("B. Mostrar la lista")
+                    print("C. Ordenar y mostrar la lista")
+                    print("D. Mostrar la longitud de la lista")
+                    print("E. Buscar un número en la lista")
+                    print("F. Salir")
+                    opcionQ = input("Seleccione una opción (A a F): ")
+                    if opcionQ == 'A'or opcionQ == 'a':
+                        lista = Agregar_Elmnts()
+                        
+                    elif opcionQ == 'B' or opcionQ == 'b':
+                        if lista:  #Verifica si la lista esta vacia
+                            Mostrar_Lista(lista)
+                        else:
+                            print("No hay elementos en la lista. Agregue algunos números primero.")
+                    elif opcionQ == 'C' or opcionQ == 'c':
+                        Ordenar_Lista(lista)
+                    elif opcionQ == 'D' or opcionQ == 'd':
+                        Mostrar_Longitud(lista)
+                    elif opcionQ == 'E' or opcionQ == 'e':
+                        Buscar_Elemento(lista)
+                    elif opcionQ == 'F' or opcionQ == 'f':
+                        break
                     else:
-                        print("No hay elementos en la lista. Agregue algunos números primero.")
-                elif opcionQ == 'C' or opcionQ == 'c':
-                    Ordenar_Lista(lista)
-                elif opcionQ == 'D' or opcionQ == 'd':
-                    Mostrar_Longitud(lista)
-                elif opcionQ == 'E' or opcionQ == 'e':
-                    Buscar_Elemento(lista)
-                    
+                        print("Opción no válida, ingrese una letra de la A a la F")
+                        
             elif opcion == "3":
                 procesar_matriz()  # Llama a la función de multiplicación de matrices
 
